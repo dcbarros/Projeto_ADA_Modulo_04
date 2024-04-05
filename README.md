@@ -55,7 +55,8 @@ No diretório:
 |_src
 | |_main
 |   |_resources
-|     |_persistence_example.xml
+|     |_META-INF
+|       |_persistence_example.xml
 ```
 criar um arquivo persistence.xml baseado no persistence_example.xml, modificando:
 
