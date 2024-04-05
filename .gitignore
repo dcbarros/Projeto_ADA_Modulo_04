@@ -1,0 +1,7 @@
+/.vscode
+/target
+src/main/resources/META-INF/persistence.xml
+src/main/java/com/projeto_estoque/data/Whiskas.txt
+src/main/java/com/projeto_estoque/data/Purina.txt
+src/main/java/com/projeto_estoque/data/Gran Plus.txt
+src/main/java/com/projeto_estoque/data/Cat Chow.txt
