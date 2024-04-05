@@ -65,5 +65,5 @@ criar um arquivo persistence.xml baseado no persistence_example.xml, modificando
     <property name="javax.persistence.jdbc.password" value="" />
 ```
 
-Adicione a url do seu banco, o usuário e a senha.
+Adicione a url do seu banco, o usuário e a senha. Após essas modificações é possível ir no arquivo Main.java e iniciar a aplicação.
 
