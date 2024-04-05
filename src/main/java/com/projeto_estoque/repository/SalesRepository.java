@@ -4,9 +4,11 @@ package com.projeto_estoque.repository;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.projeto_estoque.infra.DAO;
 import com.projeto_estoque.model.Response;
+import com.projeto_estoque.model.ResponseInfo;
 import com.projeto_estoque.model.Sale;
 
 import jakarta.persistence.TypedQuery;
@@ -79,6 +81,23 @@ public class SalesRepository extends DAO<Sale>{
         } catch (Exception e) {
             return Collections.emptyList(); 
         }
+    }
+
+    public List<ResponseInfo> getInfosByProductNameAndCategories(){
+        TypedQuery<Object[]> query = entityManager.createQuery(
+            "SELECT s.productName, s.categories, SUM(s.quantity) FROM Sale s GROUP BY s.productName, s.categories",
+            Object[].class);
+
+        List<Object[]> resultList = query.getResultList();
+
+        return resultList.stream()
+                .map(result -> {
+                    String productName = (String) result[0];
+                    String categorie = (String) result[1];
+                    Long quantity = (Long) result[2];
+                    return new ResponseInfo(productName, categorie, quantity.longValue());
+                })
+                .collect(Collectors.toList());
     }
 
     public Response save(Sale input) {

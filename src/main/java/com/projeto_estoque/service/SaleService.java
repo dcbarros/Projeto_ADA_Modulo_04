@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.function.Function;
 
 import com.projeto_estoque.model.Response;
+import com.projeto_estoque.model.ResponseInfo;
 import com.projeto_estoque.model.Sale;
 import com.projeto_estoque.repository.SalesRepository;
 
@@ -84,6 +85,16 @@ public class SaleService {
             return Optional.of(response);
         }
         return Optional.of(productsName);
+    }
+
+    public Optional<Object> getConsumByProductNameAndCategorie(){
+        List<ResponseInfo> responseInfos = salesRepository.getInfosByProductNameAndCategories();
+        if(responseInfos.isEmpty()){
+            Response response = new Response("Requisição falhou.");
+            response.setContent("Não existem dados no banco");
+            return Optional.of(response);
+        }
+        return Optional.of(responseInfos);
     }
 
     public Response createNewSale(Sale input) {

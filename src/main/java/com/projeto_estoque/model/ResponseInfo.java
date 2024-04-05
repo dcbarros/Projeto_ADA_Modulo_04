@@ -4,9 +4,9 @@ public class ResponseInfo {
 
     private String productName;
     private String categorie;
-    private String registers;
+    private Long registers;
 
-    public ResponseInfo(String productName, String categorie, String registers) {
+    public ResponseInfo(String productName, String categorie, Long registers) {
         this.productName = productName;
         this.categorie = categorie;
         this.registers = registers;
@@ -24,10 +24,10 @@ public class ResponseInfo {
     public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
-    public String getRegisters() {
+    public Long getRegisters() {
         return registers;
     }
-    public void setRegisters(String registers) {
+    public void setRegisters(Long registers) {
         this.registers = registers;
     }
     
