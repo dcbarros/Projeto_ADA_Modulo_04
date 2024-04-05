@@ -46,3 +46,24 @@ R. Não realizei esse procedimento, pois a base de dados é bem homogênio, mas 
 - Produtos com menos de 3 unidades devem ser colocados em uma lista de "estoque baixo".
 
 R. A resposta está dentro do relatório, no caso desse projeto, é quando o consumo for maior que 15000
+
+## Como instalar manipular o programa:
+
+No diretório:
+
+```
+|_src
+| |_main
+|   |_resources
+|     |_persistence_example.xml
+```
+criar um arquivo persistence.xml baseado no persistence_example.xml, modificando:
+
+```
+    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/" />
+    <property name="javax.persistence.jdbc.user" value="" /> ->
+    <property name="javax.persistence.jdbc.password" value="" />
+```
+
+Adicione a url do seu banco, o usuário e a senha.
+
